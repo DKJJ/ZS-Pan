@@ -97,7 +97,8 @@ def train(training_data_loader, name):
 
 
 if __name__ == "__main__":
-    train_set = Dataset('dataset/' + satellite + 'train.h5', name)
+    # train_set = Dataset('dataset/' + satellite + 'train.h5', name)
+    train_set = Dataset('dataset/' + satellite + '23.h5', name)
     training_data_loader = DataLoader(dataset=train_set, num_workers=0, batch_size=batch_size, shuffle=True,
                                       pin_memory=True,
                                       drop_last=True)  # put training data to DataLoader for batches

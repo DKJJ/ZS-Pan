@@ -85,7 +85,8 @@ def run_main_scripts(satellite, name):
 
 
 if __name__ == "__main__":
-    current_satellite = 'wv3/'
+    # current_satellite = 'wv3/'
+    current_satellite = 'crism_'
     current_name = 19
     print(f'training data is {current_satellite}{current_name}')
     t1 = time.time()

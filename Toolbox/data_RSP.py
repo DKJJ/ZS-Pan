@@ -10,9 +10,13 @@ class Dataset(data.Dataset):
         super(Dataset, self).__init__()
         dataset = h5py.File(file_path, 'r')
 
-        ms = np.array(dataset['ms'][name], dtype=np.float32) / 2047.0
-        lms = np.array(dataset['lms'][name], dtype=np.float32) / 2047.0
-        pan = np.array(dataset['pan'][name], dtype=np.float32) / 2047.0
+        # ms = np.array(dataset['ms'][name], dtype=np.float32) / 2047.0  #worldview3
+        # lms = np.array(dataset['lms'][name], dtype=np.float32) / 2047.0
+        # pan = np.array(dataset['pan'][name], dtype=np.float32) / 2047.0
+
+        ms = np.array(dataset['ms'], dtype=np.float32) / 2700.0  # crism23
+        lms = np.array(dataset['lms'], dtype=np.float32) / 2700.0
+        pan = np.array(dataset['pan'], dtype=np.float32) / 2700.0
 
         ms = torch.from_numpy(ms).float()
         lms = torch.from_numpy(lms).float()

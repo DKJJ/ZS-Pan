@@ -59,10 +59,11 @@ def genMTF(ratio, sensor, N=41):
     elif (sensor=='WV3'):
         GNyq = [0.325, 0.355, 0.360, 0.350, 0.365, 0.360, 0.335, 0.315]
     else:
-        GNyq = np.asarray([0.3, 0.3, 0.3, 0.3])
+        # GNyq = np.asarray([0.3, 0.3, 0.3, 0.3])
+        GNyq = 0.3 * np.ones((1, 102))
 
 
-    h = NyquistFilterGenerator(GNyq,ratio, N)
+    h = NyquistFilterGenerator(GNyq, ratio, N)
 
     return h
 
